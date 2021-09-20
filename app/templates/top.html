@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>Login</title>
+</head>
+<body>
+    <h1>ログイン</h1>
+    <!-- アカウントがないとき -->
+    {% if status == "user_notfound" %}
+    <p>ユーザーが見つかりません</p>
+    <!-- パスワードが違うとき -->
+    {% elif status == "wrong_password" %}
+    <p>パスワードが間違っています</p>
+    <!-- ログアウトしたとき -->
+    {% elif status == "logout" %}
+    <p>ログアウトしました</p>
+    {% endif %}
+
+    <form action="/login" method="post">
+        <input type="text" name="user" placeholder="username">
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" action="login" value="login">
+    </form>
+    <a href="/newcomer">新規登録はこちら</a>
+</body>

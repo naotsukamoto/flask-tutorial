@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>新規登録</title>
+</head>
+<body>
+    <h1>新規登録</h1>
+    <a href="/top">ログインはこちら</a>
+    {% if status == "exist_user" %}
+    <p>すでにユーザーが登録されています</p>
+    {% endif %}
+    <form action="/register" method="post">
+        <!-- 新規登録 - ユーザー名 -->
+        <input type="text" name="user" placeholder="username">
+        <!-- 新規登録 - パスワード -->
+        <input type="password" name="password" placeholder="Enter your password">
+        <input type="submit" action="register" value="register">
+    </form>
+</body>
